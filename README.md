@@ -1,6 +1,17 @@
 # Shutdown Timer App
 
+🛠️ Developed by **Radu**, a student at **ETTI (Electronics, Telecommunications, and Information Technology)**, with a passion for **cybersecurity** and software development.
+
 A simple Python application that allows users to schedule a shutdown of their Windows computer at a specified time.
+
+## 🖼️ Custom Icon
+
+![Shutdown Timer Icon](icon/shutdowntimer.ico)
+
+## 🛠️ Requirements
+
+- 🐍 Python 3.x
+- 🖥️ Windows OS
 
 ## 🚀 Features
 
@@ -8,38 +19,29 @@ A simple Python application that allows users to schedule a shutdown of their Wi
 - ❌ Cancel a scheduled shutdown if needed.
 - 🎛️ Simple and user-friendly interface.
 
-## 🖼️ Custom Icon
-
-
-
-## 🛠️ Requirements
-
-- 🐍 Python 3.x
-- 🖥️ Windows OS
-
 ## 📥 Installation
+
+Choose one of the following methods to install or run the Shutdown Timer app:
 
 ### 🔹 Option 1: Download Only the Executable (No setup required)
 
-If you just want to download and use the `.exe` without setting up Python:
+If you prefer using a precompiled `.exe`, follow these steps:
 
-1. **Go to the ********[Releases](https://github.com/Radu-24/ShutdownTimer_App/releases)******** page on GitHub.**
+1. Go to the [Releases](https://github.com/Radu-24/ShutdownTimer_App/releases) page on GitHub.
 2. Download `shutdown_timer.exe` from the latest release.
-3. Run the `.exe`—no installation required!
+3. Run the `.exe`—no additional installation required!
 
 ### 🔹 Option 2: Install Using Winget (Windows Only)
 
-If you prefer an easier installation, you can use Winget:
+For an easy installation via Winget:
 
 ```sh
 winget install -e --id Radu24.ShutdownTimer
 ```
 
-This will automatically download and install the latest version. (Windows only):\*\*
+### 🔹 Option 3: Clone the Repository & Run from Source
 
-### 🔹 Option 3: Clone the Repository (Full source code)
-
-1. **Clone the Repository (Full source code):** (Full source code)
+1. **Clone the Repository:**
 
    ```sh
    git clone https://github.com/Radu-24/ShutdownTimer_App.git
@@ -51,20 +53,39 @@ This will automatically download and install the latest version. (Windows only):
    cd ShutdownTimer_App
    ```
 
-## ▶️ Usage
+3. **Ensure Python is installed:**
 
-1. **Run the Application:**
+   Check your Python installation:
+
+   ```sh
+   python --version
+   ```
+
+   If Python is not installed, download it from [python.org](https://www.python.org/downloads/) or install via Winget:
+
+   ```sh
+   winget install -e --id Python.Python.3
+   ```
+
+4. **Install required dependencies:**
+
+   ```sh
+   pip install pyinstaller
+   ```
+
+5. **Run the script:**
 
    ```sh
    python shutdown_timer.py
    ```
 
-2. **Follow the Prompts:**
+## ▶️ Usage
 
-   - The application will display the current time.
-   - Enter the desired shutdown time in the format `HH:MM`.
-   - The application will calculate the time difference and schedule the shutdown.
-   - To cancel the scheduled shutdown, type `Cancel` when prompted.
+Run the application:
+
+```sh
+python shutdown_timer.py
+```
 
 ### 💡 Example Output
 
@@ -76,35 +97,112 @@ Enter 'Cancel' to abort, or press Enter to exit: Cancel
 System shutdown cancelled.
 ```
 
-## 🏗️ Building an Executable (Optional)
+## 🏗️ Build Your Own Executable
 
-To create a `.exe` version of the script with the custom icon, use **PyInstaller**:
+If you prefer creating your own `.exe` file, follow these steps:
 
-1. Install PyInstaller:
+### 📥 Required Software
+
+- [Python 3.x](https://www.python.org/downloads/)
+- [VS Code](https://code.visualstudio.com/) (optional but recommended)
+- PyInstaller (via `pip`)
+
+### 🚀 Steps to Build the Executable
+
+1. **Ensure Python is installed:**
+
+   ```sh
+   python --version
+   ```
+
+2. **Install PyInstaller:**
 
    ```sh
    pip install pyinstaller
    ```
 
-2. Create the executable:
+3. **Compile the script into an executable:**
+
+   ```sh
+   pyinstaller --onefile --windowed shutdown_timer.py
+   ```
+
+4. **(Optional) Add custom icon:**
 
    ```sh
    pyinstaller --onefile --windowed --icon=icon/shutdowntimer.ico shutdown_timer.py
    ```
 
-3. The `.exe` file will be found in the `dist/` folder.
+   If the custom icon fails, at least the executable will still be created.
+
+5. **Locate the ************`.exe`************ in the ************`dist/`************ folder.**
+
+### 🛠️ VS Code Setup (Optional)
+
+If you're using VS Code:
+
+- Install the **Python extension** for running and debugging scripts.
+
+Run the app in VS Code terminal:
+
+```sh
+python shutdown_timer.py
+```
+
+## 🛡️ Security & Trust
+
+This project is **open-source**, allowing full transparency. You can review the source code anytime. No hidden trackers, malware, or backdoors exist.
+
+### ❗ Windows Defender Warning
+
+Windows Defender may display a SmartScreen warning because the file is **unsigned**. This warning is normal for unsigned applications from individual developers.
+
+### ✅ Verify Yourself
+
+- **Scan the file** with antivirus software.
+- **Review the source code** by cloning and inspecting it directly.
+- **Build your own executable** using instructions above.
+
+## 📜 Automated Setup (Batch Script)
+
+For convenience, you can automate the setup using a batch script. Create a file or run the file named `setup.bat`:
+
+```bat
+@echo off
+setlocal
+
+:: Install Python (if not already installed)
+where python >nul 2>&1 || winget install -e --id Python.Python.3
+
+:: Install PyInstaller
+pip install pyinstaller
+
+:: Clone repository (if not already cloned)
+if not exist ShutdownTimer_App git clone https://github.com/Radu-24/ShutdownTimer_App.git
+cd ShutdownTimer_App
+
+:: Build the executable
+pyinstaller --onefile --windowed --icon=icon/shutdowntimer.ico shutdown_timer.py
+
+:: Confirm setup complete
+echo Setup complete!
+pause
+endlocal
+```
+
+Double-click the `setup.bat` to run the automatic setup.
+
+## 🔮 Future Plans
+
+🔹 **Linux Support**: Future updates may include compatibility with Linux.
+
+## 🤝 Contributing
+
+Feel free to fork this repository and submit pull requests to contribute!
 
 ## 📜 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
-## 🔮 Future Plans
-
-🔹 **Linux Support**: A future update will bring compatibility for Linux systems, allowing users to schedule shutdowns using native Linux commands.
-
-## 🤝 Contributing
-
-If you’d like to contribute, feel free to fork this repository and submit a pull request.
 
 ---
 
