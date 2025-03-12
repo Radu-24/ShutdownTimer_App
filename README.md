@@ -2,18 +2,22 @@
 
 A simple Python application that allows users to schedule a shutdown of their Windows computer at a specified time.
 
-## Features
+## 🚀 Features
 
-- Set a specific time for the computer to shut down.
-- Cancel a scheduled shutdown if needed.
-- Simple and user-friendly interface.
+- 🕒 Set a specific time for the computer to shut down.
+- ❌ Cancel a scheduled shutdown if needed.
+- 🎛️ Simple and user-friendly interface.
 
-## Requirements
+## 🖼️ Custom Icon
 
-- Python 3.x
-- Windows OS
+![Shutdown Timer Icon](icon/shutdowntimer.ico)
 
-## Installation
+## 🛠️ Requirements
+
+- 🐍 Python 3.x
+- 🖥️ Windows OS
+
+## 📥 Installation
 
 1. **Clone the Repository:**
    ```sh
@@ -25,7 +29,7 @@ A simple Python application that allows users to schedule a shutdown of their Wi
    cd ShutdownTimer_App
    ```
 
-## Usage
+## ▶️ Usage
 
 1. **Run the Application:**
    ```sh
@@ -38,7 +42,7 @@ A simple Python application that allows users to schedule a shutdown of their Wi
    - The application will calculate the time difference and schedule the shutdown.
    - To cancel the scheduled shutdown, type `Cancel` when prompted.
 
-### Example Output
+### 💡 Example Output
 
 ```
 Current time is 14:30
@@ -48,15 +52,9 @@ Enter 'Cancel' to abort, or press Enter to exit: Cancel
 System shutdown cancelled.
 ```
 
-## Notes
+## 🏗️ Building an Executable (Optional)
 
-- Ensure you have administrative privileges to execute shutdown commands.
-- The application currently supports **Windows OS** only.
-- If scheduling a shutdown **past midnight**, additional handling may be needed.
-
-## Building an Executable (Optional)
-
-To create a `.exe` version of the script, use **PyInstaller**:
+To create a `.exe` version of the script with the custom icon, use **PyInstaller**:
 
 1. Install PyInstaller:
    ```sh
@@ -65,16 +63,20 @@ To create a `.exe` version of the script, use **PyInstaller**:
 
 2. Create the executable:
    ```sh
-   pyinstaller --onefile --windowed shutdown_timer.py
+   pyinstaller --onefile --windowed --icon=icon/shutdowntimer.ico shutdown_timer.py
    ```
 
 3. The `.exe` file will be found in the `dist/` folder.
 
-## License
+## 📜 License
 
 This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-## Contributing
+## 🤝 Contributing
 
 If you’d like to contribute, feel free to fork this repository and submit a pull request.
+
+---
+
+🚀 **Enjoy your Shutdown Timer!**
 
