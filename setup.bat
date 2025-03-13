@@ -12,7 +12,7 @@ if not exist ShutdownTimer_App git clone https://github.com/Radu-24/ShutdownTime
 cd ShutdownTimer_App
 
 :: Build the executable
-pyinstaller --onefile --windowed --icon=icon/shutdowntimer.ico shutdown_timer.py
+pyinstaller --onefile --windowed --clean --icon=icon/shutdowntimer.ico shutdown_timer.py
 
 :: Confirm setup complete
 echo Setup complete!
